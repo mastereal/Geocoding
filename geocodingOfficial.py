@@ -6,6 +6,7 @@ citylist=list(ori_data.columns.str.strip())
 # Extract columns names as string (strip for blanks), and then convert them into list.
 import googlemaps
 apikey=open("APIkey.txt").readline()
+# Get API key from prepared file
 gmaps=googlemaps.Client(key=apikey)
 
 # Setup python client for geocoding API
