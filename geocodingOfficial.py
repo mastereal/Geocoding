@@ -71,3 +71,11 @@ print(datareconstruct)
 
 #datareconstruct.to_excel("./geocoding_result_floodanddrought.xlsx")
 #datareconstruct.to_csv("./geocoding_result_floodanddrought.csv")
+
+# Merge datareconstruct with ori_data
+ori_data_T=ori_data.T   # Transpositon for the data
+fin_data_coding=pd.merge(datareconstruct,ori_data_T,left_on="city",right_index=True)
+# Merge coding and original data with respect of index "city"
+print(fin_data_coding)
+#fin_data_coding.to_excel("./geocoding_result_floodanddrought_fin.xlsx")
+#fin_data_coding.to_csv("./geocoding_result_floodanddrought_fin.csv")
