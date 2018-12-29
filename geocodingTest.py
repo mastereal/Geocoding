@@ -84,7 +84,8 @@ print(ori_data)
 # In case of API failed. The data would be export to csv
 
 import googlemaps
-gmaps=googlemaps.Client(key="AIzaSyC5OpS9gqtZqG1zWLsqs_sa8CuKysTpt3g")
+apikey=open("APIkey.txt").readline()
+gmaps=googlemaps.Client(key=apikey)
 # Setup python client for geocoding API
 latitude=[]
 longtitude=[]
@@ -140,7 +141,7 @@ latitude[115]=22.78691
 longtitude[115]=100.977164
 
 
-
 datadict={"city":citylist_EN,"latitude":latitude,"longtitude":longtitude} # Setup dictionary to apply DataFrame method
 datareconstruct=DataFrame(datadict, columns=["city","latitude","longtitude"])
 print(datareconstruct)
+

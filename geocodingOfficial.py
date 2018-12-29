@@ -5,7 +5,9 @@ ori_data = pd.read_excel("./data/flood_drought_EN.xlsx",header=0,sheet_name=0)
 citylist=list(ori_data.columns.str.strip())
 # Extract columns names as string (strip for blanks), and then convert them into list.
 import googlemaps
-gmaps=googlemaps.Client(key="AIzaSyC5OpS9gqtZqG1zWLsqs_sa8CuKysTpt3g")
+apikey=open("APIkey.txt").readline()
+gmaps=googlemaps.Client(key=apikey)
+
 # Setup python client for geocoding API
 latitude=[]
 longtitude=[]
@@ -66,5 +68,5 @@ datadict={"city":citylist,"latitude":latitude,"longtitude":longtitude} # Setup d
 datareconstruct=DataFrame(datadict, columns=["city","latitude","longtitude"])
 print(datareconstruct)
 
-datareconstruct.to_excel("./geocoding_result_floodanddrought.xlsx")
-datareconstruct.to_csv("./geocoding_result_floodanddrought.csv")
+#datareconstruct.to_excel("./geocoding_result_floodanddrought.xlsx")
+#datareconstruct.to_csv("./geocoding_result_floodanddrought.csv")
