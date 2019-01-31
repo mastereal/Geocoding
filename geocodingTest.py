@@ -35,7 +35,7 @@ for city in citylist:
     #translator=Translator() # Try to initialize
     count +=1 # count in case some missing translation
     dic_city=translate_client.translate(city)
-    # Translate very city in citylist
+    # Translate every city in citylist
     #print(t_city.text)
     #print(type(t_city))
     #print(count)
